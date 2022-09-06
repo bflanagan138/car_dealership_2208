@@ -1,28 +1,19 @@
+require 'pry'
+
 class Car
+    attr_accessor :color
+    attr_reader :monthly_payment, :loan_length, :make, :model, :total_cost
 
     def initialize(make_model, monthly_payment, loan_length)
-        @make_model = make_model
+        @make = make_model.split(' ')[0]
+        @model = make_model.split(' ')[1]
         @monthly_payment = monthly_payment
         @loan_length = loan_length
+        @total_cost =  monthly_payment * loan_length
+        @color = nil
     end
-
-    def make
-        @make_model.split(' ')[0]
-    end
-
-    def model
-        @make_model.split(' ')[1]
-    end
-    
-    def monthly_payment
-        @monthly_payment
-    end
-
-    def loan_length
-        @loan_length
-    end
-
-    def total_cost
-        @monthly_payment * @loan_length
+ 
+    def paint!(color)
+        @color = color
     end
 end
