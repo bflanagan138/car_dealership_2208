@@ -43,8 +43,7 @@ RSpec.describe Dealership do
 
         dealership.add_car(car_1)
         dealership.add_car(car_2)
-        dealership.cars_by_make(car_2)
-
+        
         expect(dealership.has_inventory?).to eq (true)
     end
 end
